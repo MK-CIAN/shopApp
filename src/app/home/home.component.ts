@@ -17,6 +17,10 @@ export class HomeComponent {
 
   products: Product[] = [];
 
+  onProductOutput(product: Product) {
+    console.log(product, 'Output');
+  }
+
   ngOnInit(): void {
     this.productsService.getProducts('http://localhost:3000/clothes', {page: 0, perPage: 5}).subscribe((products: Products) => {
       this.products = products.items;
